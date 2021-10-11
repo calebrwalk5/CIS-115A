@@ -15,6 +15,6 @@ int main() {
 	hr_converted = hr * 3600;
 	min_converted = min * 60;
 	output = hr_converted + min_converted + sec;
-	cout << hr << " hours, " << min << " minutes, and " << sec << " seconds equals: \n" << output << " seconds since midnight\n";
+	cout << hr << " hours, " << min << " minutes, and " << sec << " seconds equals: \n" << output << " seconds\n";
 	return false;
 }
