@@ -4,7 +4,7 @@ using namespace std;
 char grid[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
 void board() { // The function that makes the board
-	cout << "Player1 (X) - Player2 (O) \n";
+	cout << "Player1 (X) - Player2 (O) \n"; 
 	cout << "     |     |     \n";
 	cout << "  " << grid[1] << "  |  " << grid[2] << "  |  " << grid[3] << "  \n";
 	cout << "-----------------\n";
@@ -44,7 +44,7 @@ int checkScore() { /* I looked up all the winning positons */
 		return 0;
 	}
 	else {
-		return -1; // Something must've gone wrong
+		return -1; // Keep playing
 	}
 }
 
@@ -53,7 +53,7 @@ int main() {
 	char symbol; // This will be X and O
 	while (1 == 1)  {
 		board();
-		player = (player % 2) ? 1 : 2; // Elegant way of switching player from 1 to 2 and 2 to 1
+		player = (player % 2) ? 1 : 2;
 		cout << "select choice for player " << player << ": ";
 		cin >> choice;
 		symbol = (player == 1) ? 'X' : 'O'; // Assign the symbols to players 1 and 2
@@ -100,8 +100,12 @@ int main() {
 	if(i == 1) { // If checkScore returns 1
 		cout << player << " won!\n";
 	}
-	else {
+	if(i == 0) {
 		cout << "it's a tie\n"; // If neither are true, it must be a tie
+		return 0;
+	}
+	else {
+		cout << "something went wrong\n";
 	}
 	return 0;
 }
